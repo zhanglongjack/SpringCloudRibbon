@@ -1,10 +1,10 @@
-package SpringCloud.Ribbon;
+package SpringCloud.ribbon;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import com.test.model.ServiceInfo;
+import SpringCloud.modle.ServiceInfo;
 
 @Service("restfulSerivce")
 public class RestfulServiceImpl {

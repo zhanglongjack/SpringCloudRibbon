@@ -1,4 +1,4 @@
-package SpringCloud.Ribbon;
+package SpringCloud.ribbon;
 
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;

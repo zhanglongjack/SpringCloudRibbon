@@ -1,4 +1,4 @@
-package com.test.model;
+package SpringCloud.modle;
 
 public class ServiceInfo {
 	private String testInfo;
@@ -38,6 +38,8 @@ public class ServiceInfo {
 	public void setPort(int port) {
 		this.port = port;
 	}
+
+
 
 
 }
