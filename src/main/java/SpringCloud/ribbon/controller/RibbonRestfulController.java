@@ -1,4 +1,4 @@
-package SpringCloud.ribbon;
+package SpringCloud.ribbon.controller;
 
 import java.util.logging.Logger;
 
@@ -10,13 +10,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import SpringCloud.modle.ServiceInfo;
+import SpringCloud.ribbon.service.impl.RibbonRestfulService;
 
 @RefreshScope
 @RestController
-public class RestfulController {
-	private static final Logger logger = Logger.getLogger(RestfulController.class.getName());
+@RequestMapping("/ribbon")
+public class RibbonRestfulController {
+	private static final Logger logger = Logger.getLogger(RibbonRestfulController.class.getName());
 	@Autowired
-	private RestfulServiceImpl restfulService;
+	private RibbonRestfulService restfulService;
 
 	@Value("${server.port}")
 	String port;
@@ -36,11 +38,11 @@ public class RestfulController {
 		return name;
 	}
 
-	@RequestMapping("/ribbon/info")
+	@RequestMapping("/info")
 	public String info(@RequestParam String name) {
 		logger.info("test=========" + name);
 		ServiceInfo info = restfulService.getMyTestInfoRestData(name);
-		return String.format("the service name is %s, and port is %s ,what's the testinfo ==%s", info.getName(),
+		return String.format("I am ribbon, the service name is %s, and port is %s ,what's the testinfo ==%s", info.getName(),
 				info.getPort(), info.getTestInfo());
 	}
 	
